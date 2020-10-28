@@ -74,5 +74,77 @@ In each epoch, the generator created 32 fake images. These 32 fake images and 32
 #### Learning rate
 I used learning rate = 1e-5 for both the generator and the discriminator. 
 
-**MNIST**
 
+
+# Model architectures
+
+## MNIST and Fashion-MNIST
+
+**Generator**
+
+``` python3
+def build_generator_DC(hidden_dim = 100):
+    
+    ## weight initialization
+    w_init = RandomNormal(mean = 0.0, stddev = 0.02)
+
+    ## input vector
+    z = Input(shape = (hidden_dim, )) # (None, hidden_dim)
+    
+    ## Project and reshape
+    n = h // 4 # h = height of the image
+    x = Dense(n*n*128, kernel_initializer = w_init)(z)
+    x = LeakyReLU(alpha = 0.2)(x)
+    x = Reshape((n, n, 128))(x)
+
+    ## Conv2D-T
+    x = Conv2DTranspose(256, 4, 2, 'same', kernel_initializer = w_init)(x)
+    x = BatchNormalization()(x)
+    x = LeakyReLU(alpha = 0.2)(x)
+
+    ## Conv2D-T
+    x = Conv2DTranspose(256, 4, 2, 'same', kernel_initializer = w_init)(x)
+    x = BatchNormalization()(x)
+    x = LeakyReLU(alpha = 0.2)(x)
+        
+    ## last Conv2D (no batch norm!)
+    img = Conv2D(1, 4, padding = 'same', activation = 'tanh', kernel_initializer = w_init)(x)
+    
+    # generator model
+    model = Model(inputs = z, outputs = img, name = 'generator')
+
+    return model
+```
+
+**Discriminator**
+
+``` python3
+def build_discriminator_DC():
+    
+    ## weight initialization
+    w_init = RandomNormal(mean = 0.0, stddev = 0.02)
+
+    ## input image (img)
+    img = Input(shape = (28, 28, 1))
+    
+    ## Conv
+    x = Conv2D(256, 4, 2, padding = 'same', kernel_initializer = w_init)(img)
+    x = LeakyReLU(alpha = 0.2)(x)
+
+    ## Conv
+    x = Conv2D(256, 4, 2, padding = 'same', kernel_initializer = w_init)(x)
+    x = LeakyReLU(alpha = 0.2)(x)
+
+    ## Conv
+    x = Conv2D(256, 4, 2, padding = 'same', kernel_initializer = w_init)(x)
+    x = LeakyReLU(alpha = 0.2)(x)
+
+    ## final layer
+    x = Flatten()(x)
+    y = Dense(1, activation = 'sigmoid')(x)
+
+    # generator model
+    model = Model(inputs = img, outputs = y, name = 'discriminator')
+
+    return model
+```
