@@ -2,6 +2,19 @@
 Use deep convolutional generative adversarial networks (DCGAN) to generate images in grayscale
 
 
+### References
+
+1. Original paper\
+Radford et al. (2015) **Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks** [[arXiv](https://arxiv.org/abs/1511.06434)]
+
+2. Tutorial on immplementation using MXNet [[link](https://gluon.mxnet.io/chapter14_generative-adversarial-networks/dcgan.html)]
+
+3. Lazy Programmer's GAN (with fully connected layers) Colab Notebook: https://colab.research.google.com/drive/1NGi0HyEuR8cMWyzmGzBiv06PDqmxZddY
+
+4. This post on some useful information
+https://machinelearningmastery.com/practical-guide-to-gan-failure-modes/
+
+
 # Datasets
 
 2 datasets were tested:
