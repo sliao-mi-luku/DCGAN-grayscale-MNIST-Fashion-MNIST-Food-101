@@ -105,7 +105,7 @@ def build_generator_DC(hidden_dim = 100):
     z = Input(shape = (hidden_dim, )) # (None, hidden_dim)
     
     ## Project and reshape
-    n = h // 4 # h = height of the image
+    n = H // 4 # H = height of the image
     x = Dense(n*n*128, kernel_initializer = w_init)(z)
     x = LeakyReLU(alpha = 0.2)(x)
     x = Reshape((n, n, 128))(x)
@@ -138,7 +138,7 @@ def build_discriminator_DC():
     w_init = RandomNormal(mean = 0.0, stddev = 0.02)
 
     ## input image (img)
-    img = Input(shape = (28, 28, 1))
+    img = Input(shape = (H, H, 1))
     
     ## Conv
     x = Conv2D(256, 4, 2, padding = 'same', kernel_initializer = w_init)(img)
