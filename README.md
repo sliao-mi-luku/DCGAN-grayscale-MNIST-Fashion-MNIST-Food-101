@@ -229,3 +229,21 @@ def build_discriminator_DC():
 
     return model
 ```
+
+
+### Related papers and articles
+
+**Wasserstein GAN** [[link1](https://arxiv.org/abs/1701.07875)], [[link2](https://arxiv.org/abs/1704.00028)], [[link3](https://lilianweng.github.io/lil-log/2017/08/20/from-GAN-to-WGAN.html)]
+
+****
+
+**Conditional GAN** Conditional Generative Adversarial Nets (Mirza and Osindero, 2014) [[link](https://arxiv.org/abs/1411.1784)]
+
+**Controllable GAN** Interpreting the Latent Space of GANs for Semantic Face Editing (Shen, Gu, Tang, and Zhou, 2020)[[link](https://arxiv.org/abs/1907.10786)]
+
+**Face Editting** Interpreting the Latent Space of GANs for Semantic Face Editing (Shen, Gu, Tang, and Zhou, 2020) [[link](https://arxiv.org/abs/1907.10786)]
+
+### Interesting datasets
+
+**CelebFaces** http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html
+
