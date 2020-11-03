@@ -233,15 +233,23 @@ def build_discriminator_DC():
 
 ### Related papers and articles
 
+**DCGAN**
+
+[[link1](http://doi.org/10.23915/distill.00003)]\
+[[link2](https://arxiv.org/abs/1511.06434)]\
+
+
 **Wasserstein GAN** [[link1](https://arxiv.org/abs/1701.07875)], [[link2](https://arxiv.org/abs/1704.00028)], [[link3](https://lilianweng.github.io/lil-log/2017/08/20/from-GAN-to-WGAN.html)]
 
-****
+**Spectral Normalization** [[link](https://arxiv.org/abs/1802.05957)]
 
 **Conditional GAN** Conditional Generative Adversarial Nets (Mirza and Osindero, 2014) [[link](https://arxiv.org/abs/1411.1784)]
 
 **Controllable GAN** Interpreting the Latent Space of GANs for Semantic Face Editing (Shen, Gu, Tang, and Zhou, 2020)[[link](https://arxiv.org/abs/1907.10786)]
 
 **Face Editting** Interpreting the Latent Space of GANs for Semantic Face Editing (Shen, Gu, Tang, and Zhou, 2020) [[link](https://arxiv.org/abs/1907.10786)]
+
+**Machine Bias** [[link](https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing)]
 
 ### Interesting datasets
 
