@@ -251,6 +251,10 @@ def build_discriminator_DC():
 
 **Machine Bias** [[link](https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing)]
 
+**UNet** [[link](https://arxiv.org/abs/1505.04597)]
+
+**CycleGan** [[link](https://arxiv.org/abs/1703.10593)]
+
 ### Interesting datasets
 
 **CelebFaces** http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html
